@@ -126,7 +126,7 @@ class QuestionFragment : Fragment() {
             if (mSelectedOptionPosition == 0 || btn_submit.text == "GO TO NEXT QUESTION" || btn_submit.text == "FINISH") {
                 mCurrentPosition++
                 when {
-                    mCurrentPosition  <= mQuestionsList!!.size +1-> {
+                    mCurrentPosition  <= (mQuestionsList!!.size +1)-> {
                         setQuestion()
                     }
                     else -> {
@@ -174,7 +174,7 @@ class QuestionFragment : Fragment() {
             val question = mQuestionsList!![mCurrentPosition - 1] // Getting the question from the list with the help of current position.
             defaultOptionsView()
 
-            if (mCurrentPosition == mQuestionsList!!.size) {
+            if (mCurrentPosition+1 == mQuestionsList!!.size) {
                 btn_submit.text = "FINISH"
             } else {
                 btn_submit.text = "SUBMIT"
